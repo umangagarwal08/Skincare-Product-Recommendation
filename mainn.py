@@ -63,8 +63,8 @@ def recommend_products_with_clustering(product_title, num_recommendations=10):
         
         # Get the top N recommendations (excluding the queried product)
         recommended_indices = [cluster_products.index[idx] for idx, score in sim_scores if idx != product_idx][:num_recommendations]
-        
+        zz=df.loc[recommended_indices,['Product', 'Price', 'Rating', 'Brand']]
         # Return the recommended products
-        return st.write(df.loc[recommended_indices,['Product', 'Price', 'Rating', 'Brand']])
+        return st.write(zz)
     except IndexError:
         return "Product title not found in the dataset."
