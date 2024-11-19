@@ -1,5 +1,6 @@
 import streamlit as st # type: ignore
-from main import recommend_products_with_clustering,lst
+from mainn import recommend_products_with_clustering
+from mainn import lst
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 import pandas as pd
@@ -8,7 +9,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import hstack
-from fuzzywuzzy import process
 
 
 input = st.selectbox("Choose a Product",lst)
