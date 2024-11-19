@@ -1,4 +1,5 @@
 from sklearn.decomposition import PCA
+import streamlit as st
 from sklearn.cluster import KMeans
 import pandas as pd
 import numpy as np
@@ -64,6 +65,6 @@ def recommend_products_with_clustering(product_title, num_recommendations=10):
         recommended_indices = [cluster_products.index[idx] for idx, score in sim_scores if idx != product_idx][:num_recommendations]
         
         # Return the recommended products
-        return df.loc[recommended_indices,['Product', 'Price', 'Rating', 'Brand']]
+        return st.write(df.loc[recommended_indices,['Product', 'Price', 'Rating', 'Brand']])
     except IndexError:
         return "Product title not found in the dataset."
