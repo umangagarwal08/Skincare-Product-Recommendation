@@ -10,6 +10,8 @@ from fuzzywuzzy import process
 
 df=pd.read_csv(r"C:\Users\MY\Desktop\Capstone\skincare_preprocessed.csv")
 
+lst=df['Product_new']
+
 # Step 1: TF-IDF Vectorization on 'title'
 tfidf_vectorizer = TfidfVectorizer()
 tfidf_matrix = tfidf_vectorizer.fit_transform(df['Product_new'])
