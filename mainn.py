@@ -10,7 +10,7 @@ from scipy.sparse import hstack
 
 df=pd.read_csv(r"skincare_preprocessed.csv")
 
-lst=df['Product_new']
+lst=df['Product']
 
 # Step 1: TF-IDF Vectorization on 'title'
 tfidf_vectorizer = TfidfVectorizer()

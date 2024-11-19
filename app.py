@@ -4,7 +4,7 @@ from mainn import lst
 
 
 
-input = st.selectbox("Choose a Product",lst)
+input = st.selectbox("Choose a Product",options=lst,index=None)
 get_recommendation=st.button("Guess it")
 if get_recommendation:
     if input:
