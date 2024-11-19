@@ -6,7 +6,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import hstack
-from fuzzywuzzy import process
 
 df=pd.read_csv(r"C:\Users\MY\Desktop\Capstone\skincare_preprocessed.csv")
 
