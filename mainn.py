@@ -44,7 +44,7 @@ def recommend_products_with_clustering(product_title, num_recommendations=10):
     try:
         # Find the closest match for the product title using fuzzy matching
         #closest_match = process.extractOne(product_title, df['Product_new'])[0]
-        product_idx = df[df['Product_new'] == product_title].index[0]
+        product_idx = df[df['Product'] == product_title].index[0]
         
         # Find the cluster of the queried product
         product_cluster = df.loc[product_idx, 'Cluster']
