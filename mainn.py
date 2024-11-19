@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy.sparse import hstack
 
-df=pd.read_csv(r"C:\Users\MY\Desktop\Capstone\skincare_preprocessed.csv")
+df=pd.read_csv(r"skincare_preprocessed.csv")
 
 lst=df['Product_new']
 
