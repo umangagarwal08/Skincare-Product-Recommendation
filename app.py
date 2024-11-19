@@ -1,15 +1,4 @@
-import streamlit as st # type: ignore
-from mainn import recommend_products_with_clustering
-from mainn import lst
+import sklearn
+import streamlit as st
 
-
-
-input = st.selectbox("Choose a Product",lst)
-get_recommendation=st.button("Guess it")
-if get_recommendation:
-    if input:
-        ft=recommend_products_with_clustering(input)
-        st.markdown(ft)
-    else:
-        st.write("Please choose a product")
-
+st.write(f"scikit-learn version: {sklearn.__version__}")
