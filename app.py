@@ -1,0 +1,13 @@
+import streamlit as st # type: ignore
+from main import recommend_products_with_clustering,lst
+
+
+input = st.selectbox("Choose a Product",lst)
+get_recommendation=st.button("Guess it")
+if get_recommendation:
+    if input:
+        ft=recommend_products_with_clustering(input)
+        st.markdown(ft)
+    else:
+        st.write("Please choose a product")
+
