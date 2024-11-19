@@ -1,5 +1,15 @@
-import sys
-import streamlit as st
+import streamlit as st # type: ignore
+from mainn import recommend_products_with_clustering
+from mainn import lst
 
-st.write(f"Python executable: {sys.executable}")
-st.write(f"Python version: {sys.version}")
+
+
+input = st.selectbox("Choose a Product",lst)
+get_recommendation=st.button("Guess it")
+if get_recommendation:
+    if input:
+        ft=recommend_products_with_clustering(input)
+        st.markdown(ft)
+    else:
+        st.write("Please choose a product")
+
