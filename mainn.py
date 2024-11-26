@@ -28,11 +28,11 @@ categorical_features = encoder.fit_transform(df[['Product Type']])
 combined_features = hstack([tfidf_matrix, numeric_features, categorical_features])
 
 # Step 5: Dimensionality Reduction using PCA
-pca = PCA(n_components=500)  # Reduce to 50 dimensions (adjust based on variance explained)
+pca = PCA(n_components=500)  # Reduce to 500 dimensions (90.6% variance explained)
 reduced_features = pca.fit_transform(combined_features.toarray())
 
 # Step 6: Clustering with KMeans
-num_clusters = 10  # Adjust based on dataset size and variety
+num_clusters = 7 #Take from the Kelbowvisualizer on the .ipynb file 
 kmeans = KMeans(n_clusters=num_clusters, random_state=42)
 clusters = kmeans.fit_predict(reduced_features)
 
@@ -42,8 +42,6 @@ df['Cluster'] = clusters
 # Enhanced Recommendation System Function with Clustering
 def recommend_products_with_clustering(product_title, num_recommendations=10):
     try:
-        # Find the closest match for the product title using fuzzy matching
-        #closest_match = process.extractOne(product_title, df['Product_new'])[0]
         product_idx = df[df['Product'] == product_title].index[0]
         
         # Find the cluster of the queried product

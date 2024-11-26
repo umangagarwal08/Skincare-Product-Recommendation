@@ -3,7 +3,7 @@ from mainn import recommend_products_with_clustering
 from mainn import lst
 
 
-
+st.title("Skincare Product Recommendation System")
 input = st.selectbox("Choose a Product",options=lst,index=None)
 get_recommendation=st.button("Guess it")
 if get_recommendation:
